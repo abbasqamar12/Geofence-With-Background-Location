@@ -45,6 +45,8 @@ MyGeofenceApp/
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+```
+
 Ensure runtime permission requests are handled for Android 10+ and background location.
 
 🛠️ How It Works
