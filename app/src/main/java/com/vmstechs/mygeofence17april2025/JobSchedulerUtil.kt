@@ -11,8 +11,8 @@ object JobSchedulerUtil {
     const val JOB_ID_STOP = 1002
 
     fun scheduleJobs(context: Context) {
-        scheduleJob(context, JOB_ID_START, 14, 34) //Start service at 9:00 AM
-        scheduleJob(context, JOB_ID_STOP, 14, 38) //Stop service at 7:00 PM
+        scheduleJob(context, JOB_ID_START, 15, 40) //Start service at 9:00 AM
+        scheduleJob(context, JOB_ID_STOP, 15, 50) //Stop service at 7:00 PM
     }
 
     private fun scheduleJob(context: Context, jobId: Int, hour: Int, minute: Int) {
