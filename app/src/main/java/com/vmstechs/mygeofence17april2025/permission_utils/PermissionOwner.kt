@@ -5,8 +5,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.FragmentActivity
 
 interface PermissionOwner {
-    val context: Context
-    val activity: FragmentActivity
+    val hostContext: Context
+    val hostActivity: FragmentActivity
     fun registerPermissionRequest(
         request: (ActivityResultLauncher<Array<String>>, ActivityResultLauncher<String>, ActivityResultLauncher<String>) -> Unit
     )

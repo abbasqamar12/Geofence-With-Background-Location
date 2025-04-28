@@ -56,8 +56,8 @@ object LocationManager {
     fun setupGeofencing(context: Context) {
         val geofence = Geofence.Builder()
             .setRequestId("MY_GEOFENCE_ID")
-           // .setCircularRegion(28.6270316, 77.3760845, 100f)
-            .setCircularRegion(32.73430249, -117.17819853, 100f)
+            .setCircularRegion(28.6270316, 77.3760845, 100f)
+            //.setCircularRegion(32.73430249, -117.17819853, 100f)
             .setExpirationDuration(Geofence.NEVER_EXPIRE)
             .setTransitionTypes(
                 Geofence.GEOFENCE_TRANSITION_ENTER or Geofence.GEOFENCE_TRANSITION_EXIT

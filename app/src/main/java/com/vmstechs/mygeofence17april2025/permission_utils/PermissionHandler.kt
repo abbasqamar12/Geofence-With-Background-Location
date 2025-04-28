@@ -30,7 +30,7 @@ class PermissionHandler(private val owner: PermissionOwner) {
     }
 
     fun requestLocationPermission() {
-        if (PermissionUtils.hasFineLocation(owner.context)) {
+        if (PermissionUtils.hasFineLocation(owner.hostContext)) {
             _locationPermissionState.value = PermissionState.Granted
         } else {
             locationPermissionLauncher.launch(
@@ -44,7 +44,7 @@ class PermissionHandler(private val owner: PermissionOwner) {
 
     fun requestBackgroundLocationPermission() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q ||
-            PermissionUtils.hasBackgroundLocation(owner.context)
+            PermissionUtils.hasBackgroundLocation(owner.hostContext)
         ) {
             _backgroundPermissionState.value = PermissionState.Granted
         } else {
@@ -54,7 +54,7 @@ class PermissionHandler(private val owner: PermissionOwner) {
 
     fun requestNotificationPermission() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
-            PermissionUtils.hasNotificationPermission(owner.context)
+            PermissionUtils.hasNotificationPermission(owner.hostContext)
         ) {
             _notificationPermissionState.value = PermissionState.Granted
         } else {

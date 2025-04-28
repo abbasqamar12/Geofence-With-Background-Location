@@ -19,9 +19,10 @@ import com.vmstechs.mygeofence17april2025.permission_utils.PermissionState
 
 class MainActivity : AppCompatActivity(), PermissionOwner {
     private lateinit var permissionHandler: PermissionHandler
-    override val context: Context
+    override val hostContext: Context
         get() = this
-    override val activity: FragmentActivity
+
+    override val hostActivity: FragmentActivity
         get() = this
 
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity(), PermissionOwner {
         // Start requesting permissions
         permissionHandler.requestLocationPermission()
 
-        JobSchedulerUtil.scheduleJobs(this)
+        //JobSchedulerUtil.scheduleJobs(this)
 
         LocationViewModel.locationData.observe(this) {
             // Update your UI
@@ -83,8 +84,12 @@ class MainActivity : AppCompatActivity(), PermissionOwner {
         permissionHandler.notificationPermissionState.observe(this, Observer { state ->
             if (state is PermissionState.Granted) {
                 // All permissions granted
+                //startLocationTracking
                 Log.d("MainActivity", "All permissions granted")
-                //startLocationTracking()
+
+                JobSchedulerUtil.scheduleJobs(this)
+
+
             } else if (state is PermissionState.Denied && state.shouldShowRationale) {
                 Toast.makeText(this, "Notification permission is required", Toast.LENGTH_SHORT)
                     .show()
