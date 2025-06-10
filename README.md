@@ -25,13 +25,13 @@ This is an Android app for **location tracking and geofencing** that only works 
 
 ## 📂 Project Structure
 
-MyGeofenceApp/ 
-├── LocationJobService.kt # JobService for managing location tracking 
-├── GeofenceReceiver.kt # Receives geofence events (ENTER/EXIT) 
-├── LocationServiceManager.kt # Handles start/stop of location updates 
-├── JobSchedulerUtil.kt # Schedules jobs at shift start/stop times 
-├── LocationUtils.kt # Utility for permission and location functions 
-├── MainActivity.kt # UI to monitor and manage geofencing status 
+MyGeofenceApp/
+├── LocationJobService.kt # JobService for managing location tracking
+├── GeofenceReceiver.kt # Receives geofence events (ENTER/EXIT)
+├── LocationServiceManager.kt # Handles start/stop of location updates
+├── JobSchedulerUtil.kt # Schedules jobs at shift start/stop times
+├── LocationUtils.kt # Utility for permission and location functions
+├── MainActivity.kt # UI to monitor and manage geofencing status
 └── AndroidManifest.xml # App component declarations
 
 
